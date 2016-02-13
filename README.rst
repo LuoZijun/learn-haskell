@@ -59,6 +59,7 @@ Haskell 操作符 以及 语法标记
 
 `Haskell Operators and other Lexical Notation <http://www.imada.sdu.dk/~rolf/Edu/DM22/F06/haskell-operatorer.pdf>`_
 
+::
 
     -- Start of comment line
     {- Start of short comment
