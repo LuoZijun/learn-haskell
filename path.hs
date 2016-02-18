@@ -23,9 +23,11 @@ main = do
     System.IO.putStr "Path: "
     System.IO.print path
     files <- System.Directory.getDirectoryContents path
-    let ss = filter 
-                (\fname -> fname /= (System.FilePath.makeValid ".") && fname /= (System.FilePath.makeValid "..")) 
-                files
+    let ss = filter (\fname -> 
+                        fname /= (System.FilePath.makeValid ".") 
+                        && fname /= (System.FilePath.makeValid "..")
+                    ) 
+                    files
 
     System.IO.putStrLn "Files: "
     System.IO.print files
