@@ -3,7 +3,7 @@
 import time, subprocess
 from   multiprocessing.dummy import Pool as ThreadPool 
 
-pool    = ThreadPool(8)
+pool    = ThreadPool(300)
 results = []
 
 def ping(ip):
@@ -12,7 +12,7 @@ def ping(ip):
     #result = r.stdout.read()
     (stdout, stderr) = r.communicate()
     code = r.returncode
-    q.append( (ip, code) )
+    result.append( (ip, code) )
     return True
 
 ips = map( lambda n: "192.168.1.%d" % n, range(1, 251) )
