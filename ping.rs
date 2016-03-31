@@ -35,11 +35,12 @@ fn ping (ip: String) -> (String, ExitStatus) {
 }
 
 fn main (){
-    let ips: Vec<String> = (1..30).collect::<Vec<i32>>().iter()
+    let ips: Vec<String> = (1..251).collect::<Vec<i32>>().iter()
                             .map( |&n: &i32| {
-                                     let mut ip = "192.168.1.".to_string(); 
-                                     ip.push_str( &n.to_string() );
-                                     ip
+                                    // 172.17.42.1
+                                    let mut ip = "192.168.1.".to_string(); 
+                                    ip.push_str( &n.to_string() );
+                                    ip
                             }).collect();
 
     let (tx, rx) = mpsc::channel();
