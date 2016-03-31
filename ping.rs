@@ -19,10 +19,11 @@ time="0.1.34"
 
 */
 
-fn timestamp () ->i64 {
+fn timestamp () -> f64 {
     // let tm = time::now();
-    let timespec = time::get_time(); 
-    let mills = timespec.sec + timespec.nsec as i64 / 1000 / 1000;
+    let timespec = time::get_time();
+    // 1459440009.113178
+    let mills: f64 = timespec.sec as f64 + (timespec.nsec as f64 / 1000.0 / 1000.0 / 1000.0 );
     mills
 }
 
