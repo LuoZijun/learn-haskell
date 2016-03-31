@@ -22,7 +22,7 @@ main = do
     putStrLn $ "核心数： " ++ show numCapabilities
 
     m <- newEmptyMVar
-    let ips    = map ( \ n -> "192.168.1."++(show n) ) [1..250]
+    let ips    = map ( \ n -> "192.168.1."++(show n) ) [1..251]
     
     btime <- getPOSIXTime
     putStrLn $ "开始："++ (show btime)
