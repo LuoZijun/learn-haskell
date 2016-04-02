@@ -29,7 +29,7 @@ main = do
 
     mapM_ ( \ ip -> forkIO (ping ip m) ) ips
 
-    result <- mapM ( \ _ -> takeMVar m ) [1..250]
+    result <- mapM ( \ _ -> takeMVar m ) ips
 
     etime <- getPOSIXTime
     putStrLn $ "结束："++ (show etime)
